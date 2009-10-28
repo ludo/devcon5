@@ -25,6 +25,7 @@
             %ul        
               %li{:class => dasboard_tab?}= link_to "Dashboard", "/"                
               %li{:class => on_tab_for?("customers", "applications")}= link_to "Customers", customers_path            
+              %li{:class => on_tab_for?("hosts")}= link_to "Hosts", hosts_path            
           #session 
             - if current_user
               Logged in as

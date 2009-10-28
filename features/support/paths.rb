@@ -13,6 +13,12 @@ module NavigationHelpers
       
     when /the customers page/
       customers_path
+    when /the new customer page/
+      new_customer_path
+    when /^the customer page for "(.*)"$/i
+      customer_path(Customer.find_by_name($1))
+    when /^the edit customer page for "(.*)"$/i
+      edit_customer_path(Customer.find_by_name($1))
     
     # Add more mappings here.
     # Here is a more fancy example:

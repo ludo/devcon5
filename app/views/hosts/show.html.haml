@@ -6,22 +6,13 @@
   %dd.name= h @host.try(:name)
   %dt.label= 'Address'
   %dd.address= h @host.try(:address)
+  %dt.label= 'Application'
+  %dd.address= @host.application ? link_to(h(@host.application.name), customer_application_path(@host.application.customer_id, @host.application)) : "Host is currently not assigned to an application"
   
-  %p.actions
-    = link_to 'Add check to host', new_host_check_path(@host)
-  
-  %h3 Checks
-  %table
-    %thead.header
-      %tr
-        %th.status= 'Status'
-        %th.script= 'script'
-
-        %th.actions= 'Actions'
-    %tbody.items.checks
-      - @host.checks.each do |check|
-        = render 'checks/item', :check => check
-  
+%h3 Checks
+%p.actions
+  = link_to 'Add check', new_host_check_path(@host)
+= render :partial => "checks/checks", :object => @host.checks  
   
 %p.actions
   = link_to 'Edit', edit_host_path(@host)
