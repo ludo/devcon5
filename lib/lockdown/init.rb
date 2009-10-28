@@ -108,6 +108,9 @@ Lockdown::System.configure do
     with_controller(:user_sessions).
     only_methods(:destroy)
 
+  set_permission(:manage_customers).
+    with_controller(:customers)
+
   set_permission(:my_account).
     with_controller(:users).
     only_methods(:show)
@@ -126,7 +129,8 @@ Lockdown::System.configure do
   #
   # Define the built-in user groups here:
   set_public_access(
-    :login
+    :login,
+    :manage_customers
   )
 
   set_protected_access(

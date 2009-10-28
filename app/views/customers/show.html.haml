@@ -1,0 +1,16 @@
+- content_for :subnav do
+  = render :partial => "customers/subnav"
+
+%h1.heading
+  = "Customer %s" % @customer.name
+  
+- content_tag_for(:dl, @customer) do
+  %dt.label= 'Name'
+  %dd.name= h @customer.name
+  %dt.label= 'Email'
+  %dd.email= h @customer.email
+
+%p.actions
+  = link_to 'Edit', edit_customer_path(@customer)
+  |
+  = link_to 'Index', customers_path

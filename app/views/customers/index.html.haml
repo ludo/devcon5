@@ -1,0 +1,28 @@
+%h1.heading
+  = "Customers"
+
+.actions-bar
+  %div{:class => "left search"}
+    - form_for @search do |f|
+      = f.label "Find:"
+      = f.text_field :name
+      = f.submit("Search")
+  .right
+    = will_paginate @collection, :prev_label => "&laquo; Back", :next_label => "Next &raquo;"
+  .clear                                                                                     
+  
+%p.actions
+  = link_to 'New Customer', new_customer_path
+  
+%table
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.email= 'Email'
+      %th.actions= 'Actions'
+  %tbody.items.customers
+    - @customers.each do |customer|
+      = render 'item', :customer => customer
+
+= will_paginate @collection, :prev_label => "&laquo; Back", :next_label => "Next &raquo;"
+ 

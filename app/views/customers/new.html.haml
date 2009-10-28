@@ -1,0 +1,10 @@
+%h1.heading
+  = 'New Customer'
+  
+- semantic_form_for(@customer) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Create'
+    
+%p.actions
+  = link_to 'Cancel', customers_path

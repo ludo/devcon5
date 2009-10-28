@@ -1,0 +1,13 @@
+- content_for :subnav do
+  = render :partial => "customers/subnav"
+
+%h1.heading
+  = "Editing application %s" % @application.id
+  
+- semantic_form_for(@application, :url => customer_application_path(@customer, @application)) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Update'
+    
+%p.actions
+  = link_to 'Cancel', customer_path(@customer)

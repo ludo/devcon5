@@ -10,9 +10,8 @@
     = javascript_include_tag "jquery.form.js", :cache => true            
     = javascript_include_tag "formfocus.js", :cache => true                            
     = javascript_include_tag "jquery.livequery.js", :cache => true                      
-    
-    = javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.to_json};" if protect_against_forgery?       
-    = stylesheet_link_tag "reset.css", :cache => true    
+    = javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.to_json};" if protect_against_forgery?
+    = stylesheet_link_tag "reset.css", :cache => true
     = stylesheet_link_tag "bright_admin.css", :cache => true           
     = stylesheet_link_tag "formtastic.css", :cache => true    
     = stylesheet_link_tag "formtastic_changes.css", :cache => true     
@@ -25,6 +24,7 @@
           #nav
             %ul        
               %li{:class => dasboard_tab?}= link_to "Dashboard", "/"                
+              %li{:class => on_tab_for?("customers", "applications")}= link_to "Customers", customers_path            
           #session 
             - if current_user
               Logged in as
@@ -35,10 +35,10 @@
               = link_to "login", login_path
           .clear
            
-        #panel-middle          
+        #panel-middle
           #subnav
-            %ul        
-              %li{:class => on_tab_for?("users") }= link_to "Users", users_path            
+            %ul
+              = yield :subnav
         #panel-bottom
           #headline
             %h3= @page_title ||  params[:controller].humanize             

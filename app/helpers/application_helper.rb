@@ -5,8 +5,8 @@ module ApplicationHelper
      "current"
    end  
 
-   def on_tab_for?(controller)
-     params[:controller] == controller ? "current" : ""
+   def on_tab_for?(*controllers)
+     controllers.include?(params[:controller]) ? "current" : ""
    end
    
 end
