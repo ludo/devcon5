@@ -3,6 +3,11 @@
     %h1= link_to(h(host.name), host_path(host))
     Address:
     = h host.address
-    \-
-    Application: 
-    = h host.application.try(:name)
+    - if host.application
+      \-
+      Application: 
+      = h host.application.try(:name)
+    - if host.status != "normal"
+      %br
+      = "#{host.status.titleize}:"
+      = host.checks(:conditions => { :status => host.status }).collect { |c| c.script.name.titleize }.join(", ")
