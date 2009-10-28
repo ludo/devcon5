@@ -10,4 +10,4 @@
     - if host.status != "normal"
       %br
       = "#{host.status.titleize}:"
-      = host.checks(:conditions => { :status => host.status }).collect { |c| c.script.name.titleize }.join(", ")
+      = host.checks.all(:conditions => { :status => host.status }).collect { |c| c.script.name.titleize }.join(", ")
