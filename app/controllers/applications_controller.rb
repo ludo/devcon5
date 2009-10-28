@@ -6,13 +6,17 @@ class ApplicationsController < InheritedResources::Base
   
   def create
     create! do |format|
-      format.html { redirect_to customer_applications_path(@customer) }
+      if @application.errors.empty?
+        format.html { redirect_to customer_url(@customer) }
+      end
     end
   end
 
   def update
     update! do |format|
-      format.html { redirect_to customer_applications_path(@customer) }
+      if @application.errors.empty?
+        format.html { redirect_to customer_url(@customer) }
+      end
     end
   end
   

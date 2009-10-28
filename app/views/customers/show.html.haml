@@ -10,7 +10,8 @@
   %dt.label= 'Email'
   %dd.email= h @customer.email
 
+= render :partial => "applications", :object => @customer.applications
+
 %p.actions
   = link_to 'Edit', edit_customer_path(@customer)
-  |
   = link_to 'Index', customers_path
