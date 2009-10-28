@@ -5,4 +5,10 @@ class Host < ActiveRecord::Base
   
   # === Validations
   validates_presence_of :name,:address
+  
+  # === Instance Methods
+  
+  def state
+    return "critical"
+  end
 end

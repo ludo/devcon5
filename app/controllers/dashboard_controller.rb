@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
-	
-	def index
-		
-	end
+  layout "dashboard"
+  
+  def index
+    @hosts = Host.all(:order => :name)
+  end
 end
