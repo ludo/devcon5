@@ -1,6 +1,8 @@
 class Host < ActiveRecord::Base
+  # === Associations
+  belongs_to :application
   has_many :checks
-	validates_presence_of :name,:address
-	
-
+  
+  # === Validations
+  validates_presence_of :name,:address
 end

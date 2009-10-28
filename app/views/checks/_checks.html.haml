@@ -1,0 +1,10 @@
+%table
+  %thead.header
+    %tr
+      %th.status= 'Status'
+      %th.script= 'script'
+
+      %th.actions= 'Actions'
+  %tbody.items.checks
+    - checks.each do |check|
+      = render 'checks/item', :check => check
