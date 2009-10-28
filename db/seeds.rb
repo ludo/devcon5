@@ -15,3 +15,9 @@ user = User.create(
 )
 
 Lockdown::System.make_user_administrator(user)
+
+ping_script = Script.create(:name => "ping", :filename => "ping")
+ping_script.save
+diskspace_script = Script.create(:name => "diskspace", :filename => "diskspace", :boundary_normal => "70", :boundary_warning => "80", :boundary_critical => "90") 
+
+

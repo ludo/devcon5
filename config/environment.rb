@@ -19,12 +19,18 @@ Rails::Initializer.run do |config|
   config.gem 'lockdown', :lib => false, :source => 'http://gemcutter.org', :version => '~> 1.3'
   config.gem 'authlogic', :lib => false, :source => 'http://gemcutter.org', :version => '~> 2.1'
 	
+	#sudo gem install chronic packet 
+	
+	config.gem 'chronic'
+	config.gem 'packet'
+	
+	
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
 
   # Add additional load paths for your own custom dirs
-  # config.load_paths += %W( #{RAILS_ROOT}/extras )
+	 require "#{RAILS_ROOT}/lib/scheckscript"
 
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"

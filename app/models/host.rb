@@ -7,8 +7,15 @@ class Host < ActiveRecord::Base
   validates_presence_of :name,:address
   
   # === Instance Methods
-  
-  def state
-    return "critical"
+
+  # === Class Methods
+  class << self
+    def check_all
+      Host.find(:all).each do |h|
+        h.checks.each do |c|
+          c.update_attribute(:status , c.script.check(h.address))
+        end
+      end
+    end
   end
 end
