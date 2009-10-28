@@ -15,7 +15,7 @@ class	DiskspaceScript < CheckScript
          return "normal" if usage.to_i < @boundary_normal.to_i                 
    
   rescue  Exception => e
-    puts "Exception while trying to get disk usage on host #{address} #{e.insect}"    
+    puts "Exception while trying to get disk usage on host #{address} #{e.inspect}"    
     return "critical"
   end
 

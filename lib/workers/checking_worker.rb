@@ -3,7 +3,7 @@ class CheckingWorker < BackgrounDRb::MetaWorker
   def create(args = nil)
   end
 
-	def check_al_hosts
+	def check_all_hosts
 		logger.info 'Checking hosts'    
 		Host.check_all
 	end
