@@ -6,7 +6,7 @@ class DashboardController < ApplicationController
     
     respond_to do |format|
       format.html # index.html.haml
-      format.js { render :text => "updated" }
+      format.js { render :template => "dashboard/index.html.haml", :layout => false }
     end
   end
 end

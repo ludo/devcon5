@@ -5,7 +5,7 @@ function updateDashboard() {
     method: 'get',
     url : '/dashboard.js',
     dataType : 'text',
-    success: function (text) { $('#dashboard').replace(text); }
+    success: function (text) { $('#dashboard').replaceWith(text); }
   });
 }
 
