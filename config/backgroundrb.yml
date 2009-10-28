@@ -4,5 +4,5 @@
   :ip: 0.0.0.0
 :schedules:
   :checking_worker:
-    :check_al_hosts:
+    :check_all_hosts:
       :trigger_args: */30 * * * * *

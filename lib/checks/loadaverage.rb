@@ -19,7 +19,7 @@ class	LoadaverageScript < CheckScript
          
    
   rescue  Exception => e
-    puts "Exception while trying to get Load on host #{address} #{e.insect}"    
+    puts "Exception while trying to get Load on host #{address} #{e.inspect}"    
     return "critical"
     
   end
