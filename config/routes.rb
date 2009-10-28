@@ -2,6 +2,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :customers do |customers|
     customers.resources :applications
   end
+  
+  map.resources :scripts
+
+  map.resources :hosts do |hosts|
+    hosts.resources :checks
+  end
 
   map.resources :users
 

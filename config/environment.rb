@@ -18,6 +18,7 @@ Rails::Initializer.run do |config|
   config.gem 'searchlogic', :lib => false, :source => 'http://gemcutter.org', :version => '~> 2.3'
   config.gem 'lockdown', :lib => false, :source => 'http://gemcutter.org', :version => '~> 1.3'
   config.gem 'authlogic', :lib => false, :source => 'http://gemcutter.org', :version => '~> 2.1'
+	
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
