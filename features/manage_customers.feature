@@ -12,6 +12,14 @@ Feature: Manage Customers
     Then I should see "Sun"
     And I should see "Microsoft"
   
+  Scenario: Viewing a single customers
+    Given the following customers:
+      | id  | name      | email           |
+      | 1   | Sun       | sun@example.com |
+    And I am on the customers page
+    When I follow "Show" within "#customer_1"
+    Then I should be on the customer page for "Sun"
+
   Scenario: Adding a customer
     Given I am on the new customer page
     When I fill in "Name" with "Palm"
