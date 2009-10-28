@@ -38,7 +38,7 @@
         #panel-middle          
           #subnav
             %ul        
-              %li{:class => on_tab_for?("users") }= link_to "Users", users_path            
+              /%li{:class => on_tab_for?("users") }= link_to "Users", users_path            
         #panel-bottom
           #headline
             %h3= @page_title ||  params[:controller].humanize             

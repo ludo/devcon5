@@ -9,7 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091028122829) do
+ActiveRecord::Schema.define(:version => 20091028140537) do
+
+  create_table "checks", :force => true do |t|
+    t.string   "status"
+    t.integer  "script_id"
+    t.integer  "host_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hosts", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "permissions", :force => true do |t|
     t.string   "name"
@@ -20,6 +35,16 @@ ActiveRecord::Schema.define(:version => 20091028122829) do
   create_table "permissions_user_groups", :id => false, :force => true do |t|
     t.integer "permission_id"
     t.integer "user_group_id"
+  end
+
+  create_table "scripts", :force => true do |t|
+    t.string   "name"
+    t.string   "filename"
+    t.string   "boundary_normal"
+    t.string   "boundary_warning"
+    t.string   "boundary_critical"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sessions", :force => true do |t|

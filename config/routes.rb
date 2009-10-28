@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :scripts
+
+  map.resources :hosts do |hosts|
+    hosts.resources :checks
+  end
+
   map.resources :users
 
   map.resource :account, :controller => "users"
