@@ -1,4 +1,4 @@
-- content_tag_for(:tr, check, :class => cycle(:odd, :even)) do
+- content_tag_for(:tr, check, :class => "#{cycle(:odd, :even)} #{check.status}") do
   %td.status= h check.try(:status)
   %td.script= h check.script.name
 

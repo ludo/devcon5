@@ -7,6 +7,19 @@ class Host < ActiveRecord::Base
   validates_presence_of :name,:address
   
   # === Instance Methods
+  
+  # Aggregated status for host
+  def status
+    Check.all(:order => "status").each do |check|
+      if check.status == "critical"
+        return "critical"
+      elsif check.status == "warning"
+        return "warning"
+      end
+    end
+    
+    return "normal"
+  end
 
   # === Class Methods
   class << self

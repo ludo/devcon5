@@ -1,0 +1,17 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+.critical {
+  background: #FFEDEF;
+}
+
+.warning {
+  background: #FFFECC;
+}
+
+.normal {
+  background: #E2F9E3;
+} 
