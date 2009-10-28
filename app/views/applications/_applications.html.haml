@@ -1,0 +1,8 @@
+%table
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.actions= 'Actions'
+  %tbody.items.applications
+    - applications.each do |application|
+      = render 'applications/item', :application => application

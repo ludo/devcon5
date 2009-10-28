@@ -2,7 +2,5 @@
   %td.name= h application.try(:name)
   %td.actions
     = link_to 'Show', customer_application_path(@customer, application)
-    |
     = link_to 'Edit', edit_customer_application_path(@customer, application)
-    |
-    = link_to 'Destroy', customer_applications_path(@customer), :confirm => 'Are you sure?', :method => :delete
+    = link_to 'Destroy', customer_application_path(@customer, application), :confirm => 'Are you sure?', :method => :delete

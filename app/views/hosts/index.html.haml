@@ -11,19 +11,10 @@
     = will_paginate @collection, :prev_label => "&laquo; Back", :next_label => "Next &raquo;"
   .clear                                                                                     
   
-  
 %p.actions
   = link_to 'New Host', new_host_path
-  
-%table
-  %thead.header
-    %tr
-      %th.name= 'Name'
-      %th.address= 'Address'
-      %th.actions= 'Actions'
-  %tbody.items.hosts
-    - @hosts.each do |host|
-      = render 'item', :host => host
+
+= render :partial => "hosts", :object => @hosts
 
 = will_paginate @collection, :prev_label => "&laquo; Back", :next_label => "Next &raquo;"
  

@@ -19,6 +19,12 @@ class ApplicationsController < InheritedResources::Base
       end
     end
   end
+
+  def destroy
+    destroy! do |format|
+      format.html { redirect_to customer_url(@customer) }
+    end
+  end
   
 protected
   

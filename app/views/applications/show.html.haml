@@ -4,7 +4,12 @@
 - content_tag_for(:dl, @application) do
   %dt.label= 'Name'
   %dd.name= h @application.try(:name)
-  
+
+%h3 Hosts
+%p.actions
+  = link_to 'Add host', new_customer_application_path(@customer)
+= render :partial => "hosts/hosts", :object => @application.hosts
+
 %p.actions
   = link_to 'Edit', edit_customer_application_path(@customer, @application)
   = link_to 'Index', customer_path(@customer)

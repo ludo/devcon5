@@ -1,0 +1,9 @@
+%table
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.address= 'Address'
+      %th.actions= 'Actions'
+  %tbody.items.hosts
+    - hosts.each do |host|
+      = render 'hosts/item', :host => host
