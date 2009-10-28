@@ -1,0 +1,11 @@
+defaults: &defaults
+  sitename: "devcon5"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
