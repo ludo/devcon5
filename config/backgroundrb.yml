@@ -2,9 +2,7 @@
 :backgroundrb: 
   :port: 11006
   :ip: 0.0.0.0
-  :schedules:
-    :checking_worker:
-      :check_all_hosts:
-        :trigger_args:
-          :start: <%= Time.now %>
-          :repeat_interval: <%= 20 %>
+:schedules:
+  :checking_worker:
+    :check_al_hosts:
+      :trigger_args: */30 * * * * *
