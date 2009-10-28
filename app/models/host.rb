@@ -12,7 +12,4 @@ class Host < ActiveRecord::Base
 		end
 	end
 
-  
-  # === Validations
-  validates_presence_of :name,:address
 end
