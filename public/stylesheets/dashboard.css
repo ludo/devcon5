@@ -1,17 +1,34 @@
-body {
-  font-family: Helvetica, Arial, sans-serif;
+table tbody tr.critical td {
+  background: #FFC5CC;
+  border-top: 1px solid #6d0710;
+}
+
+table tbody tr.warning td {
+  background: #FAECB5;
+  border-top: 1px solid #feae00;
+}
+
+table tbody tr.normal td {
+  background: #9ECE9E;
+  border-top: 1px solid #468b1c;
+}
+
+#dashboard {
   background-color: #fff;
   color: #000;
+  font-family: Courier New, Arial, sans-serif;
+  width: 100%;
 }
 
-.critical {
-  background: #FFEDEF;
+#dashboard td {
+  padding: 1em 2em;
 }
 
-.warning {
-  background: #FFFECC;
+#dashboard h1 {
+  font-weight: bold;
+  margin: 0;
 }
 
-.normal {
-  background: #E2F9E3;
-} 
+#dashboard a {
+  color: #000;
+}

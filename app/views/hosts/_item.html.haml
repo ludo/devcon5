@@ -1,4 +1,4 @@
-- content_tag_for(:tr, host, :class => cycle(:odd, :even)) do
+- content_tag_for(:tr, host, :class => "#{cycle(:odd, :even)} #{host.status}") do
   %td.name= h host.try(:name)
   %td.address= h host.try(:address)
   %td.actions

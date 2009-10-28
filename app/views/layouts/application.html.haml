@@ -24,13 +24,14 @@
           %h1#logo= link_to h("Kabisa Admin") , "/", :title => "Home"  
           #nav
             %ul        
-              %li{:class => dasboard_tab?}= link_to "Dashboard", "/"                
-              %li{:class => on_tab_for?("customers", "applications")}= link_to "Customers", customers_path            
-              %li{:class => on_tab_for?("hosts")}= link_to "Hosts", hosts_path            
+              %li{:class => dasboard_tab?}= link_to "Dashboard", "/"
+              %li{:class => on_tab_for?("customers", "applications")}= link_to "Customers", customers_path
+              %li{:class => on_tab_for?("hosts")}= link_to "Hosts", hosts_path
+              %li{:class => on_tab_for?("scripts")}= link_to "Scripts", scripts_path
           #session 
             - if current_user
               Logged in as
-              = link_to current_user.login, edit_user_path(current_user)
+              = link_to current_user.login, user_path(current_user)
               |
               = link_to "Logout" , logout_path
             - else
@@ -49,7 +50,7 @@
         #flash
           - flash.each do |type, message| 
             %div{:class =>  "message #{type}" }
-              %p= message        
+              %p= message
         = yield
  
         #footer

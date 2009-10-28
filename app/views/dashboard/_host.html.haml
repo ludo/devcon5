@@ -1,3 +1,8 @@
 %tr{:class => host.status}
-  %td= h host.name
-  %td= h host.address
+  %td
+    %h1= link_to(h(host.name), host_path(host))
+    Address:
+    = h host.address
+    \-
+    Application: 
+    = h host.application.try(:name)
