@@ -2,7 +2,7 @@
 %html{html_attrs}
   %head
     %meta{"http-equiv" => 'Content-Type', :content => 'text/html;charset=utf-8'}
-    %title= h(Settings.sitename || "Kabisa Admin")
+    %title= h("Kabisa Admin")
     %meta{ :name => "author", :content => "Michel de Graaf" }
     %meta{ :name => "keywords", :content => "rails rumble" }
     %meta{ :name => "description", :content => "rails rumble" }    
@@ -20,7 +20,7 @@
     #container
       #header
         #panel-top
-          %h1#logo= link_to h(Settings.sitename || "Kabisa Admin") , "/", :title => "Home"  
+          %h1#logo= link_to h("Kabisa Admin") , "/", :title => "Home"  
           #nav
             %ul        
               %li{:class => dasboard_tab?}= link_to "Dashboard", "/"                
