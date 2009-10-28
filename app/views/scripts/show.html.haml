@@ -1,0 +1,19 @@
+%h1.heading
+  = "Script %s" % @script.id
+  
+- content_tag_for(:dl, @script) do
+  %dt.label= 'Name'
+  %dd.name= h @script.try(:name)
+  %dt.label= 'Filename'
+  %dd.filename= h @script.try(:filename)
+  %dt.label= 'Boundary normal'
+  %dd.boundary_normal= h @script.try(:boundary_normal)
+  %dt.label= 'Boundary warning'
+  %dd.boundary_warning= h @script.try(:boundary_warning)
+  %dt.label= 'Boundary critical'
+  %dd.boundary_critical= h @script.try(:boundary_critical)
+  
+%p.actions
+  = link_to 'Edit', edit_script_path(@script)
+  |
+  = link_to 'Index', scripts_path

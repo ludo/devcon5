@@ -1,0 +1,33 @@
+%h1.heading
+  = "Scripts"
+
+.actions-bar
+  %div{:class => "left search"}
+    - form_for @search do |f|
+      = f.label "Find:"
+      = f.text_field :name
+      = f.submit("Search")
+  .right
+    = will_paginate @collection, :prev_label => "&laquo; Back", :next_label => "Next &raquo;"
+  .clear                                                                                     
+  
+ 
+  
+%p.actions
+  = link_to 'New Script', new_script_path
+  
+%table
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.filename= 'Filename'
+      %th.boundary_normal= 'Boundary normal'
+      %th.boundary_warning= 'Boundary warning'
+      %th.boundary_critical= 'Boundary critical'
+      %th.actions= 'Actions'
+  %tbody.items.scripts
+    - @scripts.each do |script|
+      = render 'item', :script => script
+
+= will_paginate @collection, :prev_label => "&laquo; Back", :next_label => "Next &raquo;"
+ 

@@ -1,0 +1,9 @@
+- content_tag_for(:tr, host, :class => cycle(:odd, :even)) do
+  %td.name= h host.try(:name)
+  %td.address= h host.try(:address)
+  %td.actions
+    = link_to 'Show', host_path(host)
+    |
+    = link_to 'Edit', edit_host_path(host)
+    |
+    = link_to 'Destroy', host, :confirm => 'Are you sure?', :method => :delete

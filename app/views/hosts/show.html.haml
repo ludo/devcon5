@@ -1,0 +1,28 @@
+%h1.heading
+  = "Host %s" % @host.id
+  
+- content_tag_for(:dl, @host) do
+  %dt.label= 'Name'
+  %dd.name= h @host.try(:name)
+  %dt.label= 'Address'
+  %dd.address= h @host.try(:address)
+  
+  %p.actions
+    = link_to 'Add check to host', new_host_check_path(@host)
+  
+  %h3 Checks
+  %table
+    %thead.header
+      %tr
+        %th.status= 'Status'
+        %th.script= 'script'
+
+        %th.actions= 'Actions'
+    %tbody.items.checks
+      - @host.checks.each do |check|
+        = render 'checks/item', :check => check
+  
+  
+%p.actions
+  = link_to 'Edit', edit_host_path(@host)
+  = link_to 'Index', hosts_path

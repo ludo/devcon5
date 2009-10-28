@@ -1,0 +1,10 @@
+%h1.heading
+  = "Editing script %s" % @script.id
+  
+- semantic_form_for(@script) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Update'
+    
+%p.actions
+  = link_to 'Cancel', scripts_path

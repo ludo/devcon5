@@ -1,0 +1,6 @@
+basic:
+  name: Hello
+  status: Hello
+  boundry_normal: Hello
+  boundry_warning: Hello
+  boundry_critical: Hello

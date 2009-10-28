@@ -1,0 +1,12 @@
+- content_tag_for(:tr, script, :class => cycle(:odd, :even)) do
+  %td.name= h script.try(:name)
+  %td.filename= h script.try(:filename)
+  %td.boundary_normal= h script.try(:boundary_normal)
+  %td.boundary_warning= h script.try(:boundary_warning)
+  %td.boundary_critical= h script.try(:boundary_critical)
+  %td.actions
+    = link_to 'Show', script_path(script)
+    |
+    = link_to 'Edit', edit_script_path(script)
+    |
+    = link_to 'Destroy', script, :confirm => 'Are you sure?', :method => :delete

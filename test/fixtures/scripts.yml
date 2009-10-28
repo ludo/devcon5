@@ -1,0 +1,6 @@
+basic:
+  name: Hello
+  filename: Hello
+  boundary_normal: Hello
+  boundary_warning: Hello
+  boundary_critical: Hello
